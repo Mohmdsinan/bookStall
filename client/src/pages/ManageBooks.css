@@ -1,0 +1,335 @@
+.manage-page {
+  background: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.manage-header {
+  padding: var(--spacing-12) 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  margin: 25px;
+}
+
+.manage-header h1 {
+  margin: 0 0 var(--spacing-3) 0;
+  font-size: 2.25rem;
+}
+
+.manage-header p {
+  margin: 15px 0 20px 0;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.manage-content {
+  padding: var(--spacing-12) 0;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-8);
+}
+
+/* ============================================
+   FORM SECTION
+   ============================================ */
+.manage-form-section {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-8);
+  height: fit-content;
+  position: sticky;
+  top: var(--spacing-6);
+}
+
+.manage-form-section h2 {
+  margin: 0 0 var(--spacing-6) 0;
+  font-size: 1.5rem;
+}
+
+.manage-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.form-group label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px var(--primary-50);
+  background: var(--bg-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-2);
+}
+
+.form-actions button {
+  flex: 1;
+  padding: var(--spacing-3) var(--spacing-5);
+}
+
+/* ============================================
+   LIST SECTION
+   ============================================ */
+.manage-list-section {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-8);
+}
+
+.manage-list-section h2 {
+  margin: 0 0 var(--spacing-6) 0;
+  font-size: 1.5rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-12);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-3);
+  opacity: 0.5;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   TABLE STYLES
+   ============================================ */
+.books-table-responsive {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-primary);
+}
+
+.books-table thead {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.books-table th {
+  padding: var(--spacing-4);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.books-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.books-table tbody tr {
+  transition: all var(--transition-base);
+}
+
+.books-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.book-title-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-weight: var(--font-weight-medium);
+}
+
+.book-thumbnail {
+  width: 40px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+}
+
+.price-badge {
+  display: inline-block;
+  background: var(--primary-50);
+  color: var(--primary-600);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+/* ============================================
+   ALERTS
+   ============================================ */
+.alert {
+  padding: var(--spacing-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-5);
+  font-size: 0.95rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-error {
+  background: var(--error-50);
+  color: #b91c1c;
+  border: 1px solid var(--error-500);
+  border-left: 4px solid var(--error-500);
+}
+
+.alert-success {
+  background: var(--success-50);
+  color: #047857;
+  border: 1px solid var(--success-500);
+  border-left: 4px solid var(--success-500);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .manage-content {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-form-section {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .manage-header {
+    padding: var(--spacing-8) 0;
+  }
+
+  .manage-header h1 {
+    font-size: 1.875rem;
+  }
+
+  .manage-content {
+    padding: var(--spacing-8) 0;
+  }
+
+  .manage-form-section,
+  .manage-list-section {
+    padding: var(--spacing-6);
+  }
+
+  .manage-form-section h2,
+  .manage-list-section h2 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .books-table {
+    font-size: 0.875rem;
+  }
+
+  .books-table th,
+  .books-table td {
+    padding: var(--spacing-3);
+  }
+
+  .book-title-cell {
+    gap: var(--spacing-2);
+  }
+
+  .book-thumbnail {
+    width: 32px;
+    height: 40px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .action-buttons button {
+    width: 100%;
+  }
+}

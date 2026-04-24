@@ -1,0 +1,220 @@
+.explore-page {
+  background: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.explore-header {
+  margin: 25px;
+  padding: var(--spacing-12) 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.explore-header h1 {
+  margin: 0 0 var(--spacing-3) 0;
+  font-size: 2.25rem;
+}
+
+.explore-header p {
+  margin: 15px 0 20px 0;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.explore-content {
+  padding: var(--spacing-12) 0;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+.search-container {
+  margin-bottom: var(--spacing-8);
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: all var(--transition-base);
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px var(--primary-50);
+}
+
+.search-icon {
+  font-size: 1.25rem;
+  margin-right: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0;
+  width: 100%;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.search-clear {
+  background: transparent;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0 var(--spacing-2);
+  color: var(--text-tertiary);
+  transition: all var(--transition-base);
+  margin-left: var(--spacing-2);
+}
+
+.search-clear:hover {
+  color: var(--primary-600);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   RESULTS INFO
+   ============================================ */
+.results-info {
+  padding: var(--spacing-4);
+  background: var(--primary-50);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-600);
+  margin-bottom: var(--spacing-8);
+}
+
+.results-info p {
+  margin: 0;
+  color: var(--primary-700);
+  font-size: 0.95rem;
+}
+
+.results-info strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16);
+  gap: var(--spacing-4);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-600);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16);
+  gap: var(--spacing-4);
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.empty-state .btn-secondary {
+  margin-top: var(--spacing-2);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .explore-header {
+    padding: var(--spacing-8) 0;
+  }
+
+  .explore-header h1 {
+    font-size: 1.875rem;
+  }
+
+  .explore-header p {
+    font-size: 1rem;
+  }
+
+  .explore-content {
+    padding: var(--spacing-8) 0;
+  }
+
+  .search-wrapper {
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .search-icon {
+    margin-right: var(--spacing-2);
+  }
+
+  .loading-state,
+  .empty-state {
+    padding: var(--spacing-12);
+  }
+
+  .empty-icon {
+    font-size: 2.5rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.25rem;
+  }
+}
