@@ -29,6 +29,7 @@ A React + Node.js/Express Book Store application with a modern UI and REST API b
 ### Backend Environment Variables
 
 1. Copy the example environment file:
+
    ```bash
    cd server
    cp .env.example .env
@@ -41,6 +42,7 @@ A React + Node.js/Express Book Store application with a modern UI and REST API b
 ### Frontend Environment Variables
 
 1. Copy the example environment file:
+
    ```bash
    cd client
    cp .env.example .env
