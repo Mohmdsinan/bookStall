@@ -24,6 +24,31 @@ A React + Node.js/Express Book Store application with a modern UI and REST API b
 - Shared frontend state for data syncing
 - Responsive, modern UI design
 
+## Environment Setup
+
+### Backend Environment Variables
+
+1. Copy the example environment file:
+   ```bash
+   cd server
+   cp .env.example .env
+   ```
+
+2. Update the `.env` file with your actual values:
+   - `PORT`: Server port (default: 3500)
+   - `MONGO_URI`: MongoDB connection string
+
+### Frontend Environment Variables
+
+1. Copy the example environment file:
+   ```bash
+   cd client
+   cp .env.example .env
+   ```
+
+2. Update the `.env` file with your actual values:
+   - `VITE_API_URL`: Backend API URL (default: http://localhost:3500/api)
+
 ## Setup
 
 ### Backend
