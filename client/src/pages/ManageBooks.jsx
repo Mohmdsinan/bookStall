@@ -96,7 +96,7 @@ export default function ManageBooks() {
     <div className="manage-page">
       <div className="manage-header container">
         <h1>Manage Books</h1>
-        <p>Add, edit, or delete books from your collection.</p>
+        <p>Add, edit, or delete book from collections.</p>
       </div>
 
       <div className="container manage-content">
