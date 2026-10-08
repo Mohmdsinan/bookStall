@@ -3,8 +3,14 @@ import { BooksContext } from "../context/BooksContext";
 import "./ManageBooks.css";
 
 export default function ManageBooks() {
-  const { books, fetchBooks, addBook, editBook, removeBook } =
-    useContext(BooksContext);
+  const {
+    books,
+    error: booksError,
+    fetchBooks,
+    addBook,
+    editBook,
+    removeBook,
+  } = useContext(BooksContext);
   const [form, setForm] = useState({
     title: "",
     author: "",
@@ -194,7 +200,14 @@ export default function ManageBooks() {
         <div className="manage-list-section">
           <h2>Books ({books.length})</h2>
 
-          {books.length === 0 ? (
+          {booksError ? (
+            <div className="empty-state">
+              <p>{booksError}</p>
+              <button className="btn-secondary" onClick={fetchBooks}>
+                Retry
+              </button>
+            </div>
+          ) : books.length === 0 ? (
             <div className="empty-state">
               <div className="empty-icon">📚</div>
               <p>No books yet. Add your first book using the form above.</p>

@@ -13,10 +13,16 @@ export function BooksProvider({ children }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await getBooks();
-      setBooks(res.data);
+      const books = await getBooks();
+      setBooks(books);
     } catch (err) {
-      setError(err.message);
+      setBooks([]);
+      setError(
+        err.response?.data?.error ||
+          err.response?.data?.message ||
+          err.message ||
+          "Failed to load books.",
+      );
     } finally {
       setLoading(false);
     }
@@ -52,7 +58,6 @@ export function BooksProvider({ children }) {
     async (id, formData) => {
       try {
         // Optimistic update
-        const oldBooks = books;
         setBooks((prev) =>
           prev.map((b) => (b._id === id ? { ...b, ...formData } : b)),
         );
@@ -70,15 +75,15 @@ export function BooksProvider({ children }) {
         throw err;
       }
     },
-    [books, fetchBooks],
+    [fetchBooks],
   );
 
   // Delete book with optimistic update
   const removeBook = useCallback(
     async (id) => {
+      const oldBooks = books;
       try {
         // Optimistic update
-        const oldBooks = books;
         setBooks((prev) => prev.filter((b) => b._id !== id));
 
         // API call

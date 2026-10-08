@@ -4,7 +4,7 @@ import BookCard from "../components/BookCard";
 import "./Explore.css";
 
 export default function Explore() {
-  const { books, loading, fetchBooks } = useContext(BooksContext);
+  const { books, loading, error, fetchBooks } = useContext(BooksContext);
   const [search, setSearch] = useState("");
 
   // Fetch books on component mount
@@ -50,7 +50,7 @@ export default function Explore() {
         </div>
 
         {/* Results Count */}
-        {!loading && (
+        {!loading && !error && (
           <div className="results-info">
             <p>
               Showing <strong>{filtered.length}</strong> of{" "}
@@ -64,6 +64,14 @@ export default function Explore() {
           <div className="loading-state">
             <div className="spinner"></div>
             <p>Loading books...</p>
+          </div>
+        ) : error ? (
+          <div className="empty-state">
+            <h3>Unable to load books</h3>
+            <p>{error}</p>
+            <button className="btn-secondary" onClick={fetchBooks}>
+              Retry
+            </button>
           </div>
         ) : filtered.length > 0 ? (
           <div className="grid">
